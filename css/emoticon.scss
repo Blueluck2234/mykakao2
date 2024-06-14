@@ -1,0 +1,198 @@
+@charset "utf-8";
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} // flexCenter
+
+#wrap {
+  max-width: 550px;
+  border: 1px solid #000;
+  margin: 0 auto;
+
+  header {
+    .status {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      font-size: 15px;
+
+      span {
+        img {
+          width: 13px;
+          height: 13px;
+        } // span img
+      } // .status span
+    } // .status
+
+    // 상단 메뉴
+    > nav.gnb {
+      border-top: 2px solid #797676;
+      border-bottom: 2px solid #797676;
+
+      > ul {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 50px;
+
+        > li {
+          > a {
+            position: relative;
+
+            > img {
+              width: 50px;
+              height: 50px;
+              // border: 1px solid #000;
+            } // img
+
+            > .badge {
+              @include flexCenter;
+              position: absolute;
+              top: 15px;
+              right: 50px;
+              width: 18px;
+              height: 18px;
+              color: white;
+              font-size: 15px;
+              font-weight: 600;
+              background-color: red;
+              border-radius: 50%;
+              transform: translate(100%, -100%);
+            } // .badge
+          } // a
+        } // li
+      } // ul
+    } // nav.gnb
+
+    // 찾기, 설정
+    .top {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+      padding: 0 20px 30px;
+      border-bottom: 2px solid #797676;
+
+      > h1 {
+        font-size: 28px;
+        font-weight: 800;
+      } // h1
+
+      > p {
+        display: flex;
+        align-items: center;
+
+        > span {
+          display: flex;
+          align-items: center;
+
+          > a {
+            display: flex;
+            align-items: center;
+
+            > img {
+              width: 30px;
+              height: 30px;
+            } // a
+          } // a
+        } // span
+
+        > span + span {
+          padding-left: 20px;
+        }
+      } // p
+    } // .top
+  } // header
+
+  // 이모티콘 목록 섹션
+  section {
+    .emoticon-list {
+      list-style-type: none;
+      padding: 0;
+
+      li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+
+        .emoticon {
+          display: flex;
+          align-items: center;
+
+          img {
+            @include pictureSize;
+            margin-right: 10px;
+          } // img
+
+          div {
+            .emoticon-name {
+              @include listBigfontDesign;
+            } // .emoticon-name
+
+            .emoticon-subtext {
+              @include listSmallfontDesign;
+              color: #888;
+              display: flex;
+              align-items: center;
+
+              img {
+                width: 20px;
+                height: 20px;
+                margin-right: 5px;
+              } // img
+            } // .emoticon-subtext
+          } // div
+        } // .emoticon
+
+        button {
+          border: 1px solid #000;
+          padding: 5px 10px;
+          font-size: 14px;
+          background-color: #fff;
+          cursor: pointer;
+          margin-left: 5px;
+
+          &:hover {
+            background-color: #f0f0f0;
+          } // &:hover
+        } // button
+      } // li
+    } // .emoticon-list
+  } // section
+
+  > footer {
+    > address {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      font-weight: 800;
+      text-align: center;
+      padding: 20px;
+      background-color: #ddd;
+      border-top: 1px solid #000;
+    } // address
+  } // footer
+} // #wrap
+
+@media screen and (min-width: 670px) {
+	body {
+		background-color: goldenrod;
+
+		&:after {
+      @include flexCenter();
+			height: 100vh;
+			color: #fff;
+      font-weight: 500;
+			font-size: 32px;
+			text-align: center;
+			content: '브라우저의 가로폭을 670이하로 줄여주세요.';
+		}
+	}
+
+	#wrap {
+		display: none;
+	}
+}// @media screen and 

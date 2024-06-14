@@ -1,0 +1,585 @@
+@charset "UTF-8";
+@import './reset.css';
+@keyframes talkUserAni {
+  from {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.talk-user-ani {
+  animation: talkUserAni 0.3s ease-out forwards;
+}
+
+@keyframes talkMyAni {
+  from {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.talk-my-ani {
+  animation: talkMyAni 0.3s ease-out forwards;
+}
+
+body #wrap > header {
+  padding-bottom: 20px;
+  background-color: #fff;
+}
+body #wrap > header.talk {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+}
+body #wrap > header > .status {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  font-size: 1.2em;
+}
+body #wrap > header > .top {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding: 0 20px;
+}
+body #wrap > header > .top > h1 {
+  font-size: 2em;
+  font-weight: 500;
+}
+body #wrap > header > .top > h1.talk {
+  font-size: 1.5em;
+}
+body #wrap > header > .top > h1.talk > a:hover {
+  color: #dcc206;
+}
+body #wrap > header > .top > h1 > span {
+  margin-left: 10px;
+  color: #ccc;
+  cursor: pointer;
+}
+body #wrap > header > .top > p {
+  font-size: 1.9em;
+}
+body #wrap > header > .top > p.talk {
+  font-size: 1.5em;
+}
+body #wrap > header > .top > p > span.newchat,
+body #wrap > header > .top > p > span:last-child {
+  margin-left: 0.8em;
+}
+body #wrap > header > .top > p > span:last-child > a:hover > i {
+  color: #f00;
+}
+body #wrap > header > .top > p i {
+  cursor: pointer;
+}
+body #wrap > section {
+  padding: 20px;
+}
+body #wrap > section > .talklist {
+  display: grid;
+  grid-template: auto/1fr;
+  gap: 25px 0;
+  grid-auto-rows: auto;
+}
+body #wrap > section > .talklist > li > a {
+  display: grid;
+  grid-template: auto/60px 1fr 70px;
+  gap: 0 10px;
+}
+body #wrap > section > .talklist > li > a:hover {
+  background-color: #fefbe3;
+}
+body #wrap > section > .talklist > li > a > .friend > .group {
+  display: grid;
+  grid-template: repeat(2, 1fr)/repeat(2, 1fr);
+  gap: 5px;
+}
+body #wrap > section > .talklist > li > a > .friend img {
+  display: block;
+  width: 100%;
+  border-radius: 35%;
+}
+body #wrap > section > .talklist > li > a > .cont > h3 {
+  font-size: 1.5em;
+  line-height: 1.8em;
+  font-weight: 500;
+}
+body #wrap > section > .talklist > li > a > .cont > p {
+  font-size: 1.2em;
+  color: #999999;
+}
+body #wrap > section > .talklist > li > a > .talktime {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+}
+body #wrap > section > .talklist > li > a > .talktime > time {
+  display: block;
+  color: #999999;
+  line-height: 2.5em;
+}
+body #wrap > section > .talklist > li > a > .talktime > .badge {
+  display: block;
+  width: 18px;
+  height: 18px;
+  color: #fff;
+  line-height: 18px;
+  text-align: center;
+  background-color: #f00;
+  border-radius: 50%;
+}
+body #wrap > section.talk {
+  height: 110vh;
+  margin-top: 100px;
+  background-image: url(./../images/chatBg.png);
+}
+body #wrap > section.talk > h2 {
+  margin: 10px 0 30px;
+  text-align: center;
+}
+body #wrap > section.talk > h2 > span {
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  background-color: #fff;
+  border-radius: 2em;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+body #wrap > section.talk > ul {
+  display: grid;
+  grid-template: auto/1fr;
+  gap: 20px 0;
+  grid-auto-rows: auto;
+}
+body #wrap > section.talk > ul > li {
+  display: flex;
+}
+body #wrap > section.talk > ul > li.send {
+  justify-content: flex-end;
+}
+body #wrap > section.talk > ul > li.send > .msgbox > .msg {
+  background-color: #fae54e;
+}
+body #wrap > section.talk > ul > li > .frame {
+  display: block;
+  overflow: hidden;
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+  border-radius: 50%;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+body #wrap > section.talk > ul > li > .frame > img {
+  display: block;
+  width: 100%;
+}
+body #wrap > section.talk > ul > li > .msgbox > .msg {
+  margin-top: 5px;
+  padding: 10px 20px;
+  font-weight: 300;
+  font-size: 1.2em;
+  line-height: 1.5em;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+body #wrap > section.talk > ul > li > .msgbox > .msg > img.ico {
+  width: 25px;
+  margin-right: 5px;
+}
+body #wrap > section.friends {
+  display: grid;
+  grid-template: auto/1fr;
+  gap: 25px 0;
+  grid-auto-rows: auto;
+  padding-bottom: 100px;
+}
+body #wrap > section.friends > h2 {
+  position: relative;
+  padding: 20px 0 30px 100px;
+  font-weight: 500;
+  border-bottom: 1px solid #e6e6e6;
+}
+body #wrap > section.friends > h2 > span {
+  display: block;
+  font-weight: 400;
+  font-size: 0.8rem;
+  margin-top: 8px;
+}
+body #wrap > section.friends > h2:after {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 80px;
+  height: 80px;
+  background-image: url(./../images/my.jpg);
+  background-size: cover;
+  border-radius: 35%;
+  content: "";
+}
+body #wrap > section.friends > div > h3 {
+  margin-bottom: 10px;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+body #wrap > section.friends > div > h3 + p {
+  position: relative;
+  padding: 20px 0 35px 80px;
+  font-weight: 500;
+  font-size: 1.2em;
+  border-bottom: 1px solid #e6e6e6;
+}
+body #wrap > section.friends > div > h3 + p:after {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 60px;
+  height: 60px;
+  background-size: cover;
+  border-radius: 35%;
+  content: "";
+}
+body #wrap > section.friends > div > h3 + p.birth:after {
+  background-image: url(./../images/ico_cake.png);
+}
+body #wrap > section.friends > div > h3 + p.added:after {
+  background-image: url(./../images/friend_burgerking.jpg);
+}
+body #wrap > section.friends > div > .favlist {
+  display: grid;
+  grid-template: auto/1fr;
+  gap: 25px 0;
+  grid-auto-rows: auto;
+}
+body #wrap > section.friends > div > .favlist > li > a {
+  display: grid;
+  grid-template: auto/60px 1fr 70px;
+  gap: 0 10px;
+}
+body #wrap > section.friends > div > .favlist > li > a:hover {
+  background-color: #fefbe3;
+}
+body #wrap > section.friends > div > .favlist > li > a > .friend > .group {
+  display: grid;
+  grid-template: repeat(2, 1fr)/repeat(2, 1fr);
+  gap: 5px;
+}
+body #wrap > section.friends > div > .favlist > li > a > .friend img {
+  display: block;
+  width: 100%;
+  border-radius: 35%;
+}
+body #wrap > section.friends > div > .favlist > li > a > .cont > h3 {
+  font-size: 1.5em;
+  line-height: 1.8em;
+  font-weight: 500;
+}
+body #wrap > section.friends > div > .favlist > li > a > .cont > p {
+  font-size: 1.2em;
+  color: #999999;
+}
+body #wrap > section.friends > div > .favlist > li > a > .talktime {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+}
+body #wrap > section.friends > div > .favlist > li > a > .talktime > time {
+  display: block;
+  color: #999999;
+  line-height: 2.5em;
+}
+body #wrap > section.friends > div > .favlist > li > a > .talktime > .badge {
+  display: block;
+  width: 18px;
+  height: 18px;
+  color: #fff;
+  line-height: 18px;
+  text-align: center;
+  background-color: #f00;
+  border-radius: 50%;
+}
+body #wrap > section.find {
+  display: grid;
+  grid-template: auto/1fr;
+  gap: 25px 0;
+  grid-auto-rows: auto;
+  padding-bottom: 100px;
+}
+body #wrap > section.find > div > h3 {
+  margin: 10px 0 30px;
+  font-weight: 400;
+}
+body #wrap > section.find > div > .findlist {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #e6e6e6;
+}
+body #wrap > section.find > div > .findlist > li {
+  width: 20%;
+}
+body #wrap > section.find > div > .findlist > li > a {
+  display: block;
+  text-align: center;
+}
+body #wrap > section.find > div > .findlist > li > a > i {
+  font-size: 3em;
+}
+body #wrap > section.find > div > .findlist > li > a > span {
+  display: block;
+  margin-top: 5px;
+}
+body #wrap > section.find > div > .recom {
+  display: grid;
+  grid-template: auto/1fr;
+  gap: 25px 0;
+  grid-auto-rows: auto;
+}
+body #wrap > section.find > div > .recom > li {
+  padding: 10px 0;
+}
+body #wrap > section.find > div > .recom > li:hover {
+  background-color: #fdf4b1;
+}
+body #wrap > section.find > div > .recom > li > a {
+  display: grid;
+  grid-template: auto/60px 1fr 70px;
+  gap: 0 10px;
+}
+body #wrap > section.find > div > .recom > li > a > .friend > img {
+  display: block;
+  width: 100%;
+  border-radius: 35%;
+  transform: scale(0.7);
+}
+body #wrap > section.find > div > .recom > li > a > .cont > h3 {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 1.5em;
+  line-height: 3em;
+}
+body #wrap > section.find > div > .recom > li > a > .add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+}
+body #wrap > section.more {
+  display: grid;
+  grid-template: auto/1fr;
+  gap: 35px 0;
+  grid-auto-rows: auto;
+  padding-bottom: 100px;
+}
+body #wrap > section.more > h2 {
+  position: relative;
+  padding: 20px 0 30px 100px;
+  font-weight: 500;
+}
+body #wrap > section.more > h2 > span {
+  display: block;
+  font-weight: 400;
+  font-size: 0.8rem;
+  margin-top: 8px;
+}
+body #wrap > section.more > h2:after {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 80px;
+  height: 80px;
+  background-image: url(./../images/my.jpg);
+  background-size: cover;
+  border-radius: 35%;
+  content: "";
+}
+body #wrap > section.more h3 {
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+body #wrap > section.more .srv {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #e6e6e6;
+}
+body #wrap > section.more .srv > li {
+  width: 30%;
+}
+body #wrap > section.more .srv > li > a {
+  display: block;
+  text-align: center;
+}
+body #wrap > section.more .srv > li > a > i {
+  font-size: 3em;
+}
+body #wrap > section.more .srv > li > a > span {
+  display: block;
+  margin-top: 15px;
+}
+body #wrap > section.more .srv.list {
+  border: none;
+}
+body #wrap > section.more .srv.list i {
+  padding: 10px;
+  color: #fff;
+  background-color: #f9de1c;
+  border-radius: 8px;
+}
+body #wrap > section.settings {
+  padding-bottom: 100px;
+}
+body #wrap > section.settings > .setlist {
+  display: grid;
+  grid-template: auto/1fr;
+  gap: 25px 0;
+  grid-auto-rows: auto;
+}
+body #wrap > section.settings > .setlist > li {
+  padding: 10px 0;
+}
+body #wrap > section.settings > .setlist > li:hover {
+  background-color: #fdf4b1;
+}
+body #wrap > section.settings > .setlist > li > a > i {
+  font-size: 2em;
+}
+body #wrap > section.settings > .setlist > li > a > span {
+  margin-left: 20px;
+  font-size: 2em;
+}
+@keyframes navAni {
+  from {
+    transform: translateY(80px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+body #wrap > footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #fafafa;
+  border-top: 1px solid #ccc;
+  transform: translateY(80px);
+  animation: navAni 0.5s ease-out forwards 0.5s;
+}
+body #wrap > footer.talk {
+  bottom: -325px;
+  bottom: -330px;
+  transform: none;
+  animation: none;
+  transition: all 0.3s ease-in-out;
+}
+body #wrap > footer.talk:hover {
+  bottom: 0;
+}
+body #wrap > footer > nav > ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+}
+body #wrap > footer > nav > ul > li > a {
+  position: relative;
+  font-size: 2em;
+}
+body #wrap > footer > nav > ul > li > a:hover {
+  color: #ff6666;
+}
+@keyframes badgeAni {
+  0% {
+    transform: translate(100%, -100%);
+  }
+  50% {
+    transform: translate(100%, -125%);
+  }
+  100% {
+    transform: translate(100%, -100%);
+  }
+}
+body #wrap > footer > nav > ul > li > a > .badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  width: 18px;
+  height: 18px;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 600;
+  background-color: red;
+  border-radius: 50%;
+  transform: translate(100%, -100%);
+  animation: badgeAni 1s ease-in-out 1s infinite forwards;
+}
+body #wrap > footer > .msg-container {
+  transition: all 0.3s ease-in-out;
+}
+body #wrap > footer > .msg-container:hover > img {
+  cursor: pointer;
+}
+body #wrap > footer > .msg-container > p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 45px;
+  padding: 5px 15px;
+}
+body #wrap > footer > .msg-container > p > span {
+  font-size: 1.5em;
+}
+body #wrap > footer > .msg-container > p > input {
+  position: relative;
+  flex-grow: 0.9;
+  height: 40px;
+  padding: 5px 10px;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+}
+body #wrap > footer > .msg-container > img {
+  display: block;
+  width: 100%;
+}
+
+@media screen and (min-width: 550px) {
+  body {
+    background-color: gold;
+  }
+  body:after {
+    display: block;
+    height: 100vh;
+    color: #ffffff;
+    font-size: 32px;
+    line-height: 100vh;
+    text-align: center;
+    content: "브라우저의 가로폭을 550이하로 줄여주세요";
+  }
+  #wrap {
+    display: none;
+  }
+}/*# sourceMappingURL=style 참고.css.map */

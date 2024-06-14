@@ -1,0 +1,176 @@
+@charset "UTF-8";
+#wrap {
+  width: 550px;
+  border: 1px solid #000;
+  margin: 0 auto;
+}
+#wrap > header > .status {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  font-size: 15px;
+}
+#wrap > header > .status > span > img {
+  width: 13px;
+  height: 13px;
+}
+#wrap > header > nav.gnb {
+  border-top: 2px solid #797676;
+  border-bottom: 2px solid #797676;
+}
+#wrap > header > nav.gnb > ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+}
+#wrap > header > nav.gnb > ul > li > a {
+  position: relative;
+}
+#wrap > header > nav.gnb > ul > li > a > img {
+  width: 50px;
+  height: 50px;
+}
+#wrap > header > nav.gnb > ul > li > a > .badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 15px;
+  right: 50px;
+  width: 18px;
+  height: 18px;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  background-color: red;
+  border-radius: 50%;
+  transform: translate(100%, -100%);
+}
+#wrap > header .top {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding: 0 20px 30px;
+  border-bottom: 2px solid #797676;
+}
+#wrap > header .top > h1 {
+  font-size: 28px;
+  font-weight: 800;
+}
+#wrap > header .top > p {
+  display: flex;
+  align-items: center;
+}
+#wrap > header .top > p > span {
+  display: flex;
+  align-items: center;
+}
+#wrap > header .top > p > span > a {
+  display: flex;
+  align-items: center;
+}
+#wrap > header .top > p > span > a > img {
+  width: 30px;
+  height: 30px;
+}
+#wrap > header .top > p > span + span {
+  padding-left: 20px;
+}
+#wrap section {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 20px;
+}
+#wrap .chat-list {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+#wrap a:hover .chat-item {
+  background-color: #e6f093;
+}
+#wrap a .chat-item {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0;
+  transition: background-color 0.3s;
+}
+#wrap a .chat-item:last-child {
+  border-bottom: none;
+}
+#wrap a .chat-item img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+#wrap a .chat-item .group-images {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+#wrap a .chat-item .group-images img {
+  width: 90%;
+  height: 90%;
+}
+#wrap a .chat-item .chat-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+#wrap a .chat-item .chat-details .chat-name {
+  font-weight: bold;
+}
+#wrap a .chat-item .chat-details .chat-message {
+  color: #666;
+}
+#wrap a .chat-item .chat-date {
+  color: #999;
+  font-size: 12px;
+  margin-left: 10px;
+}
+#wrap a .chat-item.unread .chat-message {
+  font-weight: bold;
+  color: #000;
+}
+#wrap a .chat-item .unread-count {
+  background-color: red;
+  color: #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+@media screen and (min-width: 670px) {
+  body {
+    background-color: goldenrod;
+  }
+  body:after {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+    font-weight: 500;
+    font-size: 32px;
+    text-align: center;
+    content: "브라우저의 가로폭을 670이하로 줄여주세요.";
+  }
+  #wrap {
+    display: none;
+  }
+}/*# sourceMappingURL=talklist.css.map */

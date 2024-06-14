@@ -1,0 +1,186 @@
+@charset "utf-8";
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} // flexCenter
+
+#wrap {
+  max-width: 550px;
+  height: 723px;
+  border: 1px solid #000;
+  margin: 0 auto;
+
+  // 상단
+  > header {
+    > .status {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      font-size: 15px;
+
+      > span {
+        > img {
+          width: 13px;
+          height: 13px;
+        } // img
+      } // span
+    } // .status
+
+    // 상단 메뉴
+    > nav.gnb {
+      border-top: 2px solid #797676;
+      border-bottom: 2px solid #797676;
+
+      > ul {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 50px;
+
+        > li {
+          > a {
+            position: relative;
+            > img {
+              width: 50px;
+              height: 50px;
+              // border: 1px solid #000;
+            } // img
+            > .badge {
+              @include flexCenter;
+              position: absolute;
+              top: 15px;
+              right: 50px;
+              width: 18px;
+              height: 18px;
+              color: white;
+              font-size: 15px;
+              font-weight: 600;
+              background-color: red;
+              border-radius: 50%;
+              transform: translate(100%, -100%);
+            } // .badge
+          } // a
+        } // li
+      } // ul
+    } // nav.gnb
+
+    // 찾기, 설정
+    .top {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+      padding: 0 20px 30px;
+      border-bottom: 2px solid #797676;
+
+      > h1 {
+        font-size: 28px;
+        font-weight: 800;
+      } // h1
+
+      > p {
+        display: flex;
+        align-items: center;
+
+        > span {
+          display: flex;
+          align-items: center;
+
+          > a {
+            display: flex;
+            align-items: center;
+
+            > img {
+              width: 30px;
+              height: 30px;
+            } // a
+          } // a
+        } // span
+
+        > span + span {
+          padding-left: 20px;
+        }
+      } // p
+    } // .top
+  } // header
+
+  > section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 200px;
+    padding: 20px;
+    border-bottom: 2px solid #797676;
+
+    > div {
+      text-align: center;
+
+      > a {
+        display: inline-block;
+        text-align: center;
+
+        > img {
+          width: 70px;
+          height: 70px;
+        } // img
+
+        > p {
+          font-size: 15px;
+          font-weight: 600;
+          margin-top: 10px;
+        } // p
+      } // a
+    } // div
+  } // section
+
+  > footer {
+    padding: 20px;
+
+    > .services {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 200px;
+
+      > div {
+        text-align: center;
+
+        > a {
+          display: inline-block;
+          text-align: center;
+
+          > img {
+            width: 70px;
+            height: 70px;
+          } // img
+
+          > p {
+            font-size: 15px;
+            font-weight: 600;
+            margin-top: 10px;
+          } // p
+        } // a
+      } // div
+    } // .services
+  } // footer
+} // #wrap
+
+@media screen and (min-width: 670px) {
+	body {
+		background-color: goldenrod;
+
+		&:after {
+      @include flexCenter();
+			height: 100vh;
+			color: #fff;
+      font-weight: 500;
+			font-size: 32px;
+			text-align: center;
+			content: '브라우저의 가로폭을 670이하로 줄여주세요.';
+		}
+	}
+
+	#wrap {
+		display: none;
+	}
+}// @media screen and 

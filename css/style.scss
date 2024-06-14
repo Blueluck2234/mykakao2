@@ -1,0 +1,220 @@
+@charset "utf-8";
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} // @mixin flexCenter
+
+#wrap {
+  max-width: 550px;
+  border: 1px solid #000;
+  margin: 0 auto;
+
+  header {
+    .status {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      font-size: 15px;
+
+      span {
+        img {
+          width: 13px;
+          height: 13px;
+        } // span img
+      } // .status span
+    } // .status
+
+    // 상단
+    nav.gnb {
+      border-top: 2px solid #797676;
+      border-bottom: 2px solid #797676;
+
+      ul {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 50px;
+
+        li {
+          a {
+            position: relative;
+            img {
+              width: 50px;
+              height: 50px;
+            } // a img
+            .badge {
+              @include flexCenter;
+              position: absolute;
+              top: 15px;
+              right: 50px;
+              width: 18px;
+              height: 18px;
+              color: white;
+              font-size: 15px;
+              font-weight: 600;
+              background-color: red;
+              border-radius: 50%;
+              transform: translate(100%, -100%);
+            } // .badge
+          } // li a
+        } // li
+      } // ul
+    } // nav.gnb
+
+    // 찾기, 설정
+    .top {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+      padding: 0 20px 30px;
+      border-bottom: 2px solid #797676;
+
+      h1 {
+        font-size: 28px;
+        font-weight: 800;
+      } // .top h1
+
+      p {
+        display: flex;
+        align-items: center;
+
+        span {
+          display: flex;
+          align-items: center;
+
+          a {
+            display: flex;
+            align-items: center;
+
+            img {
+              width: 30px;
+              height: 30px;
+            } // .top p span a img
+          } // .top p span a
+        } // .top p span
+
+        span + span {
+          padding-left: 20px;
+        } // .top p span + span
+      } // .top p
+    } // .top
+  } // header
+
+  // 친구 관리
+  section {
+    article {
+      position: relative;
+      h2 {
+        margin: 10px 0 12px 10px;
+      } // article h2
+
+      .friend,
+      .bookmark,
+      .friendlist {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px;
+        height: 80px;
+        border-bottom: 2px solid #797676;
+
+        &:hover {
+          background-color: #e6f093;
+        } // &:hover
+
+        span {
+          display: flex;
+          align-items: center;
+
+          img {
+            width: 80px;
+            height: 80px;
+            margin-right: 8px;
+            border-radius: 35%;
+          } // span img
+
+          .profile {
+            position: absolute;
+            left: 100px;
+            top: 20px;
+            font-size: 20px;
+            font-weight: 600;
+          } // .profile
+
+          .message {
+            position: absolute;
+            left: 100px;
+            bottom: 20px;
+            font-size: 15px;
+            font-weight: 400;
+          } // .message
+
+          .birth {
+            font-size: 20px;
+            font-weight: 600;
+          } // .birth
+        } // span
+
+        &.friendlist {
+          border-bottom: 1px dashed #797676;
+        } // &.friendlist
+      } // .friend, .bookmark, .friendlist
+
+      .btn-edit {
+        position: absolute;
+        top: 75px;
+        right: 30px;
+        display: flex;
+        align-items: center;
+        background-color: #ffeb3b;
+        border: 1.5px solid #000;
+        padding: 8px 12px;
+        font-weight: 500;
+        border-radius: 10px;
+        cursor: pointer;
+        text-decoration: none;
+      } // .btn-edit
+    } // article
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+
+      &:hover .friend,
+      &:hover .friendlist {
+        background-color: #e6f093;
+      } // &:hover
+    } // a
+  } // section
+
+  footer {
+    padding: 30px;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 800;
+    background-color: #ddd;
+  } // footer
+} // #wrap
+
+@media screen and (min-width: 670px) {
+	body {
+		background-color: goldenrod;
+
+		&:after {
+      @include flexCenter();
+			height: 100vh;
+			color: #fff;
+      font-weight: 500;
+			font-size: 32px;
+			text-align: center;
+			content: '브라우저의 가로폭을 670이하로 줄여주세요.';
+		}
+	}
+
+	#wrap {
+		display: none;
+	}
+}// @media screen and 

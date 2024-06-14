@@ -1,0 +1,192 @@
+@charset "UTF-8";
+#wrap {
+  max-width: 550px;
+  border: 1px solid #000;
+  margin: 0 auto;
+}
+#wrap header .status {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  font-size: 15px;
+}
+#wrap header .status span img {
+  width: 13px;
+  height: 13px;
+}
+#wrap header nav.gnb {
+  border-top: 2px solid #797676;
+  border-bottom: 2px solid #797676;
+}
+#wrap header nav.gnb ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+}
+#wrap header nav.gnb ul li a {
+  position: relative;
+}
+#wrap header nav.gnb ul li a img {
+  width: 50px;
+  height: 50px;
+}
+#wrap header nav.gnb ul li a .badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 15px;
+  right: 50px;
+  width: 18px;
+  height: 18px;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  background-color: red;
+  border-radius: 50%;
+  transform: translate(100%, -100%);
+}
+#wrap header .top {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding: 0 20px 30px;
+  border-bottom: 2px solid #797676;
+}
+#wrap header .top h1 {
+  font-size: 28px;
+  font-weight: 800;
+}
+#wrap header .top p {
+  display: flex;
+  align-items: center;
+}
+#wrap header .top p span {
+  display: flex;
+  align-items: center;
+}
+#wrap header .top p span a {
+  display: flex;
+  align-items: center;
+}
+#wrap header .top p span a img {
+  width: 30px;
+  height: 30px;
+}
+#wrap header .top p span + span {
+  padding-left: 20px;
+}
+#wrap section article {
+  position: relative;
+}
+#wrap section article h2 {
+  margin: 10px 0 12px 10px;
+}
+#wrap section article .friend,
+#wrap section article .bookmark,
+#wrap section article .friendlist {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  height: 80px;
+  border-bottom: 2px solid #797676;
+}
+#wrap section article .friend:hover,
+#wrap section article .bookmark:hover,
+#wrap section article .friendlist:hover {
+  background-color: #e6f093;
+}
+#wrap section article .friend span,
+#wrap section article .bookmark span,
+#wrap section article .friendlist span {
+  display: flex;
+  align-items: center;
+}
+#wrap section article .friend span img,
+#wrap section article .bookmark span img,
+#wrap section article .friendlist span img {
+  width: 80px;
+  height: 80px;
+  margin-right: 8px;
+  border-radius: 35%;
+}
+#wrap section article .friend span .profile,
+#wrap section article .bookmark span .profile,
+#wrap section article .friendlist span .profile {
+  position: absolute;
+  left: 100px;
+  top: 20px;
+  font-size: 20px;
+  font-weight: 600;
+}
+#wrap section article .friend span .message,
+#wrap section article .bookmark span .message,
+#wrap section article .friendlist span .message {
+  position: absolute;
+  left: 100px;
+  bottom: 20px;
+  font-size: 15px;
+  font-weight: 400;
+}
+#wrap section article .friend span .birth,
+#wrap section article .bookmark span .birth,
+#wrap section article .friendlist span .birth {
+  font-size: 20px;
+  font-weight: 600;
+}
+#wrap section article .friend.friendlist,
+#wrap section article .bookmark.friendlist,
+#wrap section article .friendlist.friendlist {
+  border-bottom: 1px dashed #797676;
+}
+#wrap section article .btn-edit {
+  position: absolute;
+  top: 75px;
+  right: 30px;
+  display: flex;
+  align-items: center;
+  background-color: #ffeb3b;
+  border: 1.5px solid #000;
+  padding: 8px 12px;
+  font-weight: 500;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+}
+#wrap section a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+#wrap section a:hover .friend, #wrap section a:hover .friendlist {
+  background-color: #e6f093;
+}
+#wrap footer {
+  padding: 30px;
+  font-size: 20px;
+  text-align: center;
+  font-weight: 800;
+  background-color: #ddd;
+}
+
+@media screen and (min-width: 670px) {
+  body {
+    background-color: goldenrod;
+  }
+  body:after {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+    font-weight: 500;
+    font-size: 32px;
+    text-align: center;
+    content: "브라우저의 가로폭을 670이하로 줄여주세요.";
+  }
+  #wrap {
+    display: none;
+  }
+}/*# sourceMappingURL=style.css.map */

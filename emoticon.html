@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>카카오톡 디자인 리뉴얼</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/emoticon.css" />
+  </head>
+  <body>
+    <div id="wrap">
+      <header>
+        <p class="status">
+          <span>
+            <img
+              class="signal"
+              src="./images/icons8-높은-연결-50.png"
+              alt="signal"
+            />
+            <span>SKT</span>
+            <img
+              class="wifi"
+              src="./images/icons8-와이파이-50.png"
+              alt="wifi"
+            />
+          </span>
+          <time datetime="2024-11-20T13:54">오후 01:54</time>
+          <span>
+            <span class="battery">70%</span>
+            <img
+              class="battery-icon"
+              src="./images/icons8-배터리-60.png"
+              alt="battery"
+            />
+          </span>
+        </p>
+
+        <!-- 상단 메뉴 -->
+        <nav class="gnb">
+          <ul>
+            <li>
+              <a href="./index.html">
+                <img
+                  class="user"
+                  src="./images/icons8-사람-64.png"
+                  alt="user"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="talklist.html">
+                <span class="badge">1</span>
+                <img
+                  class="comment"
+                  src="./images/icons8-이야기-50.png"
+                  alt="comment"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="emoticon.html">
+                <img
+                  class="emoticon"
+                  src="./images/icons8-행복-50.png"
+                  alt="emoticon"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="#" id="aiSwitch">
+                <img
+                  class="AI"
+                  id="aiIcon"
+                  src="./images/icons8-AI-off-48.png"
+                  alt="AI"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="more.html">
+                <img
+                  class="more"
+                  src="./images/icons8-더보기-50.png"
+                  alt="more"
+                />
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- 찾기, 설정 -->
+        <div class="top">
+          <h1>이모티콘</h1>
+          <p>
+            <span>
+              <a href="#">
+                <span class="sr-only">찾기</span>
+                <img src="./images/icons8-찾기-52.png" alt="search" />
+              </a>
+            </span>
+            <span>
+              <a href="settings.html">
+                <span class="sr-only">설정</span>
+                <img src="./images/icons8-설정-100.png" alt="setting" />
+              </a>
+            </span>
+          </p>
+        </div>
+      </header>
+
+      <!-- 이모티콘 -->
+      <section>
+        <h2 class="sr-only">카카오톡 이모티콘</h2>
+        <ul class="emoticon-list">
+          <li>
+            <div class="emoticon">
+              <img src="./images/춘식.JPG" alt="Lion Emoji" />
+              <div>
+                <div class="emoticon-name">춘식이는 아깽이</div>
+                <div class="emoticon-subtext">
+                  <img src="./images/icons8-동전-96.png" alt="coin" />2,000
+                </div>
+              </div>
+            </div>
+            <div class="button">
+              <button>선물</button>
+              <button>구매</button>
+            </div>
+          </li>
+
+          <li>
+            <div class="emoticon">
+              <img src="./images/감자.JPG" alt="Potato Emoji" />
+              <div>
+                <div class="emoticon-name">어떻게든 살아가는 부실감자</div>
+                <div class="emoticon-subtext">
+                  <img src="./images/icons8-동전-96.png" alt="coin" />2,000
+                </div>
+              </div>
+            </div>
+            <div class="button">
+              <button>선물</button>
+              <button>구매</button>
+            </div>
+          </li>
+
+          <li>
+            <div class="emoticon">
+              <img src="./images/토끼.JPG" alt="Rabbit Emoji" />
+              <div>
+                <div class="emoticon-name">사랑에 빠진 행복토끼</div>
+                <div class="emoticon-subtext">
+                  <img src="./images/icons8-동전-96.png" alt="coin" />2,000
+                </div>
+              </div>
+            </div>
+            <div class="button">
+              <button>선물</button>
+              <button>구매</button>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <footer>
+        <address>&copy; Kakao Corp. All rights reserved.</address>
+      </footer>
+    </div>
+    <script src="./js/function.js"></script>
+  </body>
+</html>

@@ -1,0 +1,178 @@
+@charset "UTF-8";
+#wrap {
+  max-width: 550px;
+  border: 1px solid #000;
+  margin: 0 auto;
+}
+#wrap > header > .status {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  font-size: 15px;
+}
+#wrap > header > .status > span > img {
+  width: 13px;
+  height: 13px;
+}
+#wrap > header > nav.gnb {
+  border-top: 2px solid #797676;
+  border-bottom: 2px solid #797676;
+}
+#wrap > header > nav.gnb > ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+}
+#wrap > header > nav.gnb > ul > li > a {
+  position: relative;
+}
+#wrap > header > nav.gnb > ul > li > a > img {
+  width: 50px;
+  height: 50px;
+}
+#wrap > header > nav.gnb > ul > li > a > .badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 15px;
+  right: 50px;
+  width: 18px;
+  height: 18px;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  background-color: red;
+  border-radius: 50%;
+  transform: translate(100%, -100%);
+}
+#wrap > header .top {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding: 0 20px 30px;
+  border-bottom: 2px solid #797676;
+}
+#wrap > header .top > h1 {
+  font-size: 28px;
+  font-weight: 800;
+}
+#wrap > header .top > p {
+  display: flex;
+  align-items: center;
+}
+#wrap > header .top > p > span {
+  display: flex;
+  align-items: center;
+}
+#wrap > header .top > p > span > a {
+  display: flex;
+  align-items: center;
+}
+#wrap > header .top > p > span > a > img {
+  width: 30px;
+  height: 30px;
+}
+#wrap > header .top > p > span + span {
+  padding-left: 20px;
+}
+#wrap section.chat-container {
+  padding: 20px;
+  background-color: #ebf592;
+  min-height: calc(100vh - 140px); /* 헤더 및 상태바 높이 제외 */
+}
+#wrap section.chat-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #000;
+}
+#wrap section.chat-container .message {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+#wrap section.chat-container .message.received {
+  flex-direction: row;
+}
+#wrap section.chat-container .message.sent {
+  flex-direction: row-reverse;
+}
+#wrap section.chat-container .message .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+}
+#wrap section.chat-container .message .avatar img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#wrap section.chat-container .message .text {
+  max-width: 70%;
+  padding: 10px 15px;
+  font-size: 13px;
+  font-weight: normal;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+#wrap section.chat-container .message .text.sent {
+  background-color: yellow;
+  text-align: right;
+}
+#wrap section.chat-container .message.sent .text {
+  background-color: yellow;
+  text-align: right;
+}
+#wrap footer {
+  background-color: #fff;
+  padding: 10px 20px;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  bottom: 0;
+  width: 510px;
+}
+#wrap footer .message-input {
+  display: flex;
+  align-items: center;
+}
+#wrap footer .message-input input {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  margin-right: 10px;
+  font-size: 16px;
+}
+#wrap footer .message-input button {
+  background-color: #ffeb3b;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 670px) {
+  body {
+    background-color: goldenrod;
+  }
+  body:after {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+    font-weight: 500;
+    font-size: 32px;
+    text-align: center;
+    content: "브라우저의 가로폭을 670이하로 줄여주세요.";
+  }
+  #wrap {
+    display: none;
+  }
+}/*# sourceMappingURL=talk1.css.map */

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <li>
+      <a href="#" id="aiSwitch">
+        <img
+          class="AI"
+          id="aiIcon"
+          src="./images/icons8-AI off-48.png"
+          alt="AI"
+        />
+      </a>
+    </li>
+    <script>
+      document
+        .getElementById("aiSwitch")
+        .addEventListener("click", function () {
+          var aiIcon = document.getElementById("aiIcon");
+          if (aiIcon.src.includes("off")) {
+            aiIcon.src = "./images/icons8-AI on-48.png";
+          } else {
+            aiIcon.src = "./images/icons8-AI off-48.png";
+          }
+        });
+    </script>
+  </body>
+</html>

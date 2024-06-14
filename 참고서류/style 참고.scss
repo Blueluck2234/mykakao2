@@ -1,0 +1,737 @@
+@charset "utf-8";
+
+//css에서는 url()을 통해서 import 해야 하지만
+//sass에서는 생략가능
+@import './reset.css';
+
+//컬러시스템
+$pri-color-1: #fae54e;
+$pri-color-2: #ccc;
+
+$sec-color-1: #fcfcfc;
+$sec-color-2: #f7f7f7;
+
+$point-color-1: #f00;
+
+//사스에서 변수선언-무조건 $로 시작
+$width-mobile: 550px;
+$mobile: 'screen and (min-width:' + $width-mobile + ')';
+
+//믹신변수
+@mixin shadow {
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+//믹신함수 - 매개변수로 값 전달
+//매개변수에 초기값 설정 가능
+//호출방법은 자바스크립트와 같음
+@mixin girdLayout($rowGap: 25px) {
+	display: grid;
+	grid-template: auto/1fr;
+	gap: $rowGap 0;
+	grid-auto-rows: auto;
+}
+
+@keyframes talkUserAni {
+	from {
+		transform: translateX(-30px);
+		opacity: 0;
+	}
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+.talk-user-ani {
+	animation: talkUserAni 0.3s ease-out forwards;
+}
+
+@keyframes talkMyAni {
+	from {
+		transform: translateX(30px);
+		opacity: 0;
+	}
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+.talk-my-ani {
+	animation: talkMyAni 0.3s ease-out forwards;
+}
+
+body {
+	#wrap {
+		> header {
+			padding-bottom: 20px;
+			background-color: #fff;
+
+			&.talk {
+				position: fixed;
+				left: 0;
+				top: 0;
+				z-index: 100;
+				width: 100%;
+			}
+
+			> .status {
+				display: flex;
+				justify-content: space-between;
+				padding: 10px;
+				font-size: 1.2em;
+			}
+
+			> .top {
+				display: flex;
+				justify-content: space-between;
+				margin-top: 30px;
+				padding: 0 20px;
+
+				> h1 {
+					font-size: 2em;
+					font-weight: 500;
+
+					//개인별 톡페이지
+					&.talk {
+						font-size: 1.5em;
+						> a:hover {
+							color: darken($pri-color-1, 20%);
+						}
+					}
+
+					> span {
+						margin-left: 10px;
+						color: $pri-color-2;
+						cursor: pointer;
+					}
+				} //end of h1
+
+				> p {
+					font-size: 1.9em;
+
+					//개인별 톡페이지
+					&.talk {
+						font-size: 1.5em;
+					}
+
+					> span.newchat,
+					> span:last-child {
+						margin-left: 0.8em;
+					}
+
+					> span:last-child > a:hover > i {
+						color: $point-color-1;
+					}
+
+					i {
+						cursor: pointer;
+					}
+				} //end of p
+			} //end of .top
+		} //end of header
+
+		> section {
+			padding: 20px;
+
+			> .talklist {
+				@include girdLayout;
+
+				> li {
+					// border: 1px solid #000;
+					> a {
+						display: grid;
+						grid-template: auto/60px 1fr 70px;
+						gap: 0 10px;
+
+						&:hover {
+							background-color: lighten($pri-color-1, 30%);
+						}
+
+						> .friend {
+							> .group {
+								display: grid;
+								grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+								gap: 5px;
+							}
+
+							img {
+								display: block;
+								width: 100%;
+								border-radius: 35%;
+							}
+						} //end of .friend
+
+						> .cont {
+							> h3 {
+								font-size: 1.5em;
+								line-height: 1.8em;
+								font-weight: 500;
+							}
+							> p {
+								font-size: 1.2em;
+								color: darken($pri-color-2, 20%);
+							}
+						} //end of .cont
+
+						> .talktime {
+							display: flex;
+							flex-direction: column;
+							justify-content: center;
+							align-items: flex-end;
+							position: relative;
+
+							> time {
+								display: block;
+								color: darken($pri-color-2, 20%);
+								line-height: 2.5em;
+							}
+							> .badge {
+								display: block;
+								width: 18px;
+								height: 18px;
+								color: #fff;
+								line-height: 18px;
+								text-align: center;
+								background-color: $point-color-1;
+								border-radius: 50%;
+							}
+						} //end of .time
+					} //end of a
+				} //end of li
+			} //end of .talklist
+		} //end of section
+
+		//개인별 톡페이지
+		> section.talk {
+			height: 110vh;
+			margin-top: 100px;
+			background-image: url(./../images/chatBg.png);
+
+			> h2 {
+				margin: 10px 0 30px;
+				text-align: center;
+
+				> span {
+					padding: 5px 10px;
+					font-size: 0.8rem;
+					font-weight: 500;
+					background-color: #fff;
+					border-radius: 2em;
+					@include shadow;
+				}
+			} //end of h2
+
+			> ul {
+				@include girdLayout(20px);
+
+				> li {
+					display: flex;
+					// border: 1px solid #000;
+
+					&.send {
+						justify-content: flex-end;
+
+						> .msgbox > .msg {
+							background-color: $pri-color-1;
+						}
+					}
+
+					> .frame {
+						display: block;
+						overflow: hidden;
+						width: 40px;
+						height: 40px;
+						margin-right: 15px;
+						border-radius: 50%;
+						@include shadow;
+
+						> img {
+							display: block;
+							width: 100%;
+						}
+					} //end of .frame
+
+					> .msgbox {
+						> .msg {
+							margin-top: 5px;
+							padding: 10px 20px;
+							font-weight: 300;
+							font-size: 1.2em;
+							line-height: 1.5em;
+							background-color: #fff;
+							border-radius: 10px;
+							@include shadow;
+
+							> img.ico {
+								width: 25px;
+								margin-right: 5px;
+							}
+						} //end of .msg
+					} //end of .msgbox
+				} //end of li
+			} //end of ul
+		} //end of .talk
+
+		//친구들
+		> section.friends {
+			@include girdLayout;
+
+			padding-bottom: 100px;
+
+			> h2 {
+				position: relative;
+				padding: 20px 0 30px 100px;
+				font-weight: 500;
+				// border: 1px solid #000;
+				border-bottom: 1px solid lighten($pri-color-2, 10%);
+
+				> span {
+					display: block;
+					font-weight: 400;
+					font-size: 0.8rem;
+					margin-top: 8px;
+				}
+
+				&:after {
+					display: block;
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 80px;
+					height: 80px;
+					background-image: url(./../images/my.jpg);
+					background-size: cover;
+					border-radius: 35%;
+					content: '';
+				}
+			} //end of h2
+
+			> div {
+				> h3 {
+					margin-bottom: 10px;
+					font-size: 0.8rem;
+					font-weight: 400;
+
+					& + p {
+						position: relative;
+						padding: 20px 0 35px 80px;
+						font-weight: 500;
+						font-size: 1.2em;
+						border-bottom: 1px solid lighten($pri-color-2, 10%);
+
+						&:after {
+							display: block;
+							position: absolute;
+							left: 0;
+							top: 0;
+							width: 60px;
+							height: 60px;
+							background-size: cover;
+							border-radius: 35%;
+							content: '';
+						}
+
+						&.birth:after {
+							background-image: url(./../images/ico_cake.png);
+						}
+
+						&.added:after {
+							background-image: url(./../images/friend_burgerking.jpg);
+						}
+					} //end of p
+				} //end of h3
+
+				> .favlist {
+					@include girdLayout;
+
+					> li {
+						// border: 1px solid #000;
+						> a {
+							display: grid;
+							grid-template: auto/60px 1fr 70px;
+							gap: 0 10px;
+
+							&:hover {
+								background-color: lighten($pri-color-1, 30%);
+							}
+
+							> .friend {
+								> .group {
+									display: grid;
+									grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+									gap: 5px;
+								}
+
+								img {
+									display: block;
+									width: 100%;
+									border-radius: 35%;
+								}
+							} //end of .friend
+
+							> .cont {
+								> h3 {
+									font-size: 1.5em;
+									line-height: 1.8em;
+									font-weight: 500;
+								}
+								> p {
+									font-size: 1.2em;
+									color: darken($pri-color-2, 20%);
+								}
+							} //end of .cont
+
+							> .talktime {
+								display: flex;
+								flex-direction: column;
+								justify-content: center;
+								align-items: flex-end;
+								position: relative;
+
+								> time {
+									display: block;
+									color: darken($pri-color-2, 20%);
+									line-height: 2.5em;
+								}
+								> .badge {
+									display: block;
+									width: 18px;
+									height: 18px;
+									color: #fff;
+									line-height: 18px;
+									text-align: center;
+									background-color: $point-color-1;
+									border-radius: 50%;
+								}
+							} //end of .time
+						} //end of a
+					} //end of li
+				} //end of .favlist
+			}
+		} //end of .friends
+
+		//찾기
+		> section.find {
+			@include girdLayout;
+			padding-bottom: 100px;
+
+			> div {
+				> h3 {
+					margin: 10px 0 30px;
+					font-weight: 400;
+				}
+
+				> .findlist {
+					display: flex;
+					justify-content: space-around;
+					width: 100%;
+					padding-bottom: 30px;
+					border-bottom: 1px solid lighten($pri-color-2, 10%);
+
+					> li {
+						width: 20%;
+
+						> a {
+							display: block;
+							text-align: center;
+
+							> i {
+								font-size: 3em;
+							}
+
+							> span {
+								display: block;
+								margin-top: 5px;
+							} //end of span
+						} //end of a
+					} //end of li
+				} //end of .findlist
+
+				> .recom {
+					@include girdLayout;
+
+					> li {
+						// border: 1px solid #000;
+						padding: 10px 0;
+						&:hover {
+							background-color: lighten($pri-color-1, 20%);
+						}
+
+						> a {
+							display: grid;
+							grid-template: auto/60px 1fr 70px;
+							gap: 0 10px;
+
+							> .friend {
+								> img {
+									display: block;
+									width: 100%;
+									border-radius: 35%;
+									transform: scale(0.7);
+								}
+							} //end of .friend
+
+							> .cont {
+								> h3 {
+									display: flex;
+									align-items: center;
+									font-weight: 500;
+									font-size: 1.5em;
+									line-height: 3em;
+								}
+							} //end of .cont
+
+							> .add {
+								display: flex;
+								justify-content: center;
+								align-items: center;
+								font-size: 1.5em;
+							} //end of .time
+						} //end of a
+					} //end of li
+				} //end of .recom
+			} //end of div
+		} //end of .find
+
+		//더보기
+		> section.more {
+			@include girdLayout(35px);
+			padding-bottom: 100px;
+
+			> h2 {
+				position: relative;
+				padding: 20px 0 30px 100px;
+				font-weight: 500;
+
+				// border-bottom: 1px solid lighten($pri-color-2,10%);
+
+				> span {
+					display: block;
+					font-weight: 400;
+					font-size: 0.8rem;
+					margin-top: 8px;
+				}
+
+				&:after {
+					display: block;
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 80px;
+					height: 80px;
+					background-image: url(./../images/my.jpg);
+					background-size: cover;
+					border-radius: 35%;
+					content: '';
+				}
+			} //end of h2
+
+			h3 {
+				margin-bottom: 20px;
+				font-weight: 400;
+			}
+
+			.srv {
+				display: flex;
+				justify-content: space-around;
+				width: 100%;
+				padding-bottom: 30px;
+				border-bottom: 1px solid lighten($pri-color-2, 10%);
+
+				> li {
+					width: 30%;
+
+					> a {
+						display: block;
+						text-align: center;
+
+						> i {
+							font-size: 3em;
+						}
+
+						> span {
+							display: block;
+							margin-top: 15px;
+						} //end of span
+					} //end of a
+				} //end of li
+			} //end of .ssrv
+
+			.srv.list {
+				border: none;
+				i {
+					padding: 10px;
+					color: #fff;
+					background-color: darken($pri-color-1, 10%);
+					border-radius: 8px;
+				}
+			}
+		} //end of .more
+
+		//설정
+		> section.settings {
+			padding-bottom: 100px;
+
+			> .setlist {
+				@include girdLayout;
+
+				> li {
+					padding: 10px 0;
+					&:hover {
+						background-color: lighten($pri-color-1, 20%);
+					}
+
+					> a {
+						> i {
+							font-size: 2em;
+						}
+
+						> span {
+							margin-left: 20px;
+							font-size: 2em;
+						}
+					} //end of a
+				}
+			} //end of .setlist
+		} //end of .settings
+
+		@keyframes navAni {
+			from {
+				transform: translateY(80px);
+			}
+			to {
+				transform: translateY(0);
+			}
+		}
+
+		> footer {
+			position: fixed;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			background-color: lighten($pri-color-2, 18%);
+			border-top: 1px solid $pri-color-2;
+			transform: translateY(80px);
+			animation: navAni 0.5s ease-out forwards 0.5s;
+
+			&.talk {
+				bottom: -325px;
+				bottom: -330px;
+				transform: none;
+				animation: none;
+				transition: all 0.3s ease-in-out;
+
+				&:hover {
+					bottom: 0;
+				}
+			}
+
+			> nav {
+				> ul {
+					display: flex;
+					justify-content: space-between;
+					padding: 20px 50px;
+
+					> li {
+						> a {
+							position: relative;
+							font-size: 2em;
+
+							&:hover {
+								color: lighten($point-color-1, 20%);
+							}
+
+							@keyframes badgeAni {
+								0% {
+									transform: translate(100%, -100%);
+								}
+								50% {
+									transform: translate(100%, -125%);
+								}
+								100% {
+									transform: translate(100%, -100%);
+								}
+							}
+
+							> .badge {
+								display: flex;
+								justify-content: center;
+								align-items: center;
+								position: absolute;
+								top: 50%;
+								right: 50%;
+								width: 18px;
+								height: 18px;
+								color: white;
+								font-size: 0.7rem;
+								font-weight: 600;
+								background-color: red;
+								border-radius: 50%;
+								transform: translate(100%, -100%);
+								animation: badgeAni 1s ease-in-out 1s infinite forwards;
+							}
+						} //end of a
+					} //end of li
+				} //end of ul
+			} //end of nav
+
+			> .msg-container {
+				transition: all 0.3s ease-in-out;
+
+				&:hover > img {
+					cursor: pointer;
+				}
+
+				> p {
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					height: 45px;
+					padding: 5px 15px;
+
+					> span {
+						font-size: 1.5em;
+					}
+
+					> input {
+						position: relative;
+						flex-grow: 0.9;
+						height: 40px;
+						padding: 5px 10px;
+						font-size: 1rem;
+						border: none;
+						outline: none;
+					} //end of input
+				} //end of p
+
+				> img {
+					// display: none;
+					display: block;
+					width: 100%;
+				}
+			} //message-container
+		} //end of footer
+	} //end of #wrap
+} //end of body
+
+@media screen and (min-width: 550px) {
+	body {
+		background-color: gold;
+
+		&:after {
+			display: block;
+			height: 100vh;
+			color: #ffffff;
+			font-size: 32px;
+			line-height: 100vh;
+			text-align: center;
+			content: '브라우저의 가로폭을 550이하로 줄여주세요';
+		}
+	}
+
+	#wrap {
+		display: none;
+	}
+}

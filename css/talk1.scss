@@ -1,0 +1,218 @@
+@charset "utf-8";
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} // flexCenter
+
+#wrap {
+  max-width: 550px;
+  border: 1px solid #000;
+  margin: 0 auto;
+
+  // 상단
+  > header {
+    > .status {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      font-size: 15px;
+
+      > span {
+        > img {
+          width: 13px;
+          height: 13px;
+        } // img
+      } // span
+    } // .status
+
+    // 상단 메뉴
+    > nav.gnb {
+      border-top: 2px solid #797676;
+      border-bottom: 2px solid #797676;
+
+      > ul {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 50px;
+
+        > li {
+          > a {
+            position: relative;
+            > img {
+              width: 50px;
+              height: 50px;
+              // border: 1px solid #000;
+            } // img
+            > .badge {
+              @include flexCenter;
+              position: absolute;
+              top: 15px;
+              right: 50px;
+              width: 18px;
+              height: 18px;
+              color: white;
+              font-size: 15px;
+              font-weight: 600;
+              background-color: red;
+              border-radius: 50%;
+              transform: translate(100%, -100%);
+            } // .badge
+          } // a
+        } // li
+      } // ul
+    } // nav.gnb
+
+    // 찾기, 설정
+    .top {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+      padding: 0 20px 30px;
+      border-bottom: 2px solid #797676;
+
+      > h1 {
+        font-size: 28px;
+        font-weight: 800;
+      } // h1
+
+      > p {
+        display: flex;
+        align-items: center;
+
+        > span {
+          display: flex;
+          align-items: center;
+
+          > a {
+            display: flex;
+            align-items: center;
+
+            > img {
+              width: 30px;
+              height: 30px;
+            } // a
+          } // a
+        } // span
+
+        > span + span {
+          padding-left: 20px;
+        }
+      } // p
+    } // .top
+  } // header
+
+  section.chat-container {
+    padding: 20px;
+    background-color: #ebf592;
+    min-height: calc(100vh - 140px); /* 헤더 및 상태바 높이 제외 */
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 16px;
+      color: #000;
+    } // h2
+
+    .message {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+
+      &.received {
+        flex-direction: row;
+      } // &.received
+
+      &.sent {
+        flex-direction: row-reverse;
+      } // &.sent
+
+      .avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 10px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        } // img
+      } // .avatar
+
+      .text {
+        max-width: 70%;
+        padding: 10px 15px;
+        font-size: 13px;
+        font-weight: normal;
+        border-radius: 10px;
+        background-color: #fff;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+        &.sent {
+          background-color: yellow;
+          text-align: right;
+        } // &.sent
+      } // .text
+    } // .message
+
+    .message.sent .text {
+      background-color: yellow;
+      text-align: right;
+    } // .message.sent .text
+  } // .chat-container
+
+  footer {
+    background-color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    bottom: 0;
+    width: 510px;
+
+    .message-input {
+      display: flex;
+      align-items: center;
+
+      input {
+        flex-grow: 1;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        margin-right: 10px;
+        font-size: 16px;
+      } // input
+
+      button {
+        background-color: #ffeb3b;
+        border: none;
+        border-radius: 20px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      } // button
+    } // .message-input
+  } // footer
+} //wrap
+
+@media screen and (min-width: 670px) {
+	body {
+		background-color: goldenrod;
+
+		&:after {
+      @include flexCenter();
+			height: 100vh;
+			color: #fff;
+      font-weight: 500;
+			font-size: 32px;
+			text-align: center;
+			content: '브라우저의 가로폭을 670이하로 줄여주세요.';
+		}
+	}
+
+	#wrap {
+		display: none;
+	}
+}// @media screen and 

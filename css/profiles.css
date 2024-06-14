@@ -1,0 +1,70 @@
+@charset "UTF-8";
+#wrap {
+  position: relative;
+  max-width: 550px;
+  height: 811px;
+  margin: 0 auto;
+  border: 1px solid #000;
+  background-image: url("./../images/배경화면.jpeg");
+  background-size: cover;
+}
+#wrap > header > .status {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  font-size: 15px;
+}
+#wrap > header > .status > span > img {
+  width: 13px;
+  height: 13px;
+}
+#wrap .profile-body {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#wrap .profile-body .profile {
+  text-align: center;
+  margin-bottom: 20px;
+  color: white;
+  font-weight: 400;
+  text-shadow: 1px 2px 3px black;
+}
+#wrap .profile-body .profile img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+#wrap .profile-body .profile .name {
+  font-size: 1.5em;
+  margin-top: 10px;
+}
+#wrap .profile-body .profile .status {
+  font-size: 15px;
+  margin-top: 5px;
+}
+#wrap .profile-body .menu {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 10px 0;
+}
+#wrap .profile-body .menu div {
+  text-align: center;
+  flex: 1;
+}
+#wrap .profile-body .menu div img {
+  width: 30px;
+  height: 30px;
+}
+#wrap .profile-body .menu div span {
+  display: block;
+  margin-top: 5px;
+  font-size: 13px;
+  font-weight: 500;
+}/*# sourceMappingURL=profiles.css.map */

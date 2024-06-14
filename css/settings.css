@@ -1,0 +1,167 @@
+@charset "UTF-8";
+#wrap {
+  max-width: 550px;
+  border: 1px solid #000;
+  margin: 0 auto;
+}
+#wrap > header > .status {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  font-size: 15px;
+}
+#wrap > header > .status > span > img {
+  width: 13px;
+  height: 13px;
+}
+#wrap > header > nav.gnb {
+  border-top: 2px solid #797676;
+  border-bottom: 2px solid #797676;
+}
+#wrap > header > nav.gnb > ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+}
+#wrap > header > nav.gnb > ul > li > a {
+  position: relative;
+}
+#wrap > header > nav.gnb > ul > li > a > img {
+  width: 50px;
+  height: 50px;
+}
+#wrap > header > nav.gnb > ul > li > a > .badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 15px;
+  right: 50px;
+  width: 18px;
+  height: 18px;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  background-color: red;
+  border-radius: 50%;
+  transform: translate(100%, -100%);
+}
+#wrap > header .top {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding: 0 20px 30px;
+  border-bottom: 2px solid #797676;
+}
+#wrap > header .top > h1 {
+  font-size: 28px;
+  font-weight: 800;
+}
+#wrap > header .top > p {
+  display: flex;
+  align-items: center;
+}
+#wrap > header .top > p > span {
+  display: flex;
+  align-items: center;
+}
+#wrap > header .top > p > span > a {
+  display: flex;
+  align-items: center;
+}
+#wrap > header .top > p > span > a > img {
+  width: 30px;
+  height: 30px;
+}
+#wrap > header .top > p > span + span {
+  padding-left: 20px;
+}
+#wrap > section > .content {
+  position: relative;
+  height: 360px;
+  margin: 20px;
+  margin-top: 50px;
+}
+#wrap > section > .content > .settings1 {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  height: 180px;
+}
+#wrap > section > .content > .settings1 > a > div {
+  width: 90px;
+  height: 90px;
+  text-align: center;
+  margin: 10px;
+  border: 1px solid #000;
+  border-radius: 35%;
+}
+#wrap > section > .content > .settings1 > a > div:hover {
+  background-color: greenyellow;
+}
+#wrap > section > .content > .settings1 > a > div > img {
+  width: 45px;
+  height: 45px;
+  margin-top: 5px;
+}
+#wrap > section > .content > .settings1 > a > div > p {
+  font-size: 18px;
+  font-weight: 500;
+}
+#wrap > section > .content > .settings2 {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  height: 180px;
+}
+#wrap > section > .content > .settings2 > a > div {
+  width: 90px;
+  height: 90px;
+  text-align: center;
+  margin: 10px;
+  border: 1px solid #000;
+  border-radius: 35%;
+}
+#wrap > section > .content > .settings2 > a > div:hover {
+  background-color: greenyellow;
+}
+#wrap > section > .content > .settings2 > a > div > img {
+  width: 45px;
+  height: 45px;
+  margin-top: 5px;
+}
+#wrap > section > .content > .settings2 > a > div > p {
+  font-size: 18px;
+  font-weight: 500;
+}
+#wrap > footer > address {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 800;
+  text-align: center;
+  padding: 20px;
+  background-color: #ddd;
+  border-top: 1px solid #000;
+}
+
+@media screen and (min-width: 670px) {
+  body {
+    background-color: goldenrod;
+  }
+  body:after {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+    font-weight: 500;
+    font-size: 32px;
+    text-align: center;
+    content: "브라우저의 가로폭을 670이하로 줄여주세요.";
+  }
+  #wrap {
+    display: none;
+  }
+}/*# sourceMappingURL=settings.css.map */

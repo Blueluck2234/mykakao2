@@ -1,0 +1,109 @@
+@charset "utf-8";
+
+#wrap {
+  position: relative;
+  max-width: 550px;
+  height: 811px;
+  margin: 0 auto;
+  border: 1px solid #000;
+  background-image: url("./../images/배경화면.jpeg");
+  background-size: cover;
+
+
+  // 상단
+  > header {
+    > .status {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      font-size: 15px;
+
+      > span {
+        > img {
+          width: 13px;
+          height: 13px;
+        } // img
+      } // span
+    } // .status
+  } // header
+
+  // 하단
+  .profile-body {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .profile {
+      text-align: center;
+      margin-bottom: 20px;
+      color: white;
+      font-weight: 400;
+      text-shadow: 1px 2px 3px black;
+
+      img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%; // img
+      } // .profile img
+
+      .name {
+        font-size: 1.5em;
+        margin-top: 10px; // .name
+      } // .profile .name
+
+      .status {
+        font-size: 15px;
+        margin-top: 5px; // .status
+      } // .profile .status
+    } // .profile
+
+    .menu {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      height: 50px;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 10px 0;
+
+      div {
+        text-align: center;
+        flex: 1;
+
+        img {
+          width: 30px;
+          height: 30px; 
+        } // .menu div img
+
+        span {
+          display: block;
+          margin-top: 5px;
+          font-size: 13px;
+          font-weight: 500;
+        } // .menu div span
+      } // .menu div
+    } // .menu
+  } // profile-body
+} // #wrap
+
+@media screen and (min-width: 670px) {
+	body {
+		background-color: goldenrod;
+
+		&:after {
+      @include flexCenter();
+			height: 100vh;
+			color: #fff;
+      font-weight: 500;
+			font-size: 32px;
+			text-align: center;
+			content: '브라우저의 가로폭을 670이하로 줄여주세요.';
+		}
+	}
+
+	#wrap {
+		display: none;
+	}
+}// @media screen and 
